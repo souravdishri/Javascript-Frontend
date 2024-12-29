@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <!-- this is a comment -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    // console.log(parent);
+    // console.log(parent.children);            //shows HTMLCollection
+    // console.log(parent.children[1].innerHTML);   //shows Tuesday
+
+    // for (let i = 0; i < parent.children.length; i++) {   //yes ,this works here, because it is our traditional for loop, so don't need to convert into array here
+    //      console.log(parent.children[i].innerHTML);
+        
+    // }
+    parent.children[1].style.color = "orange"
+    // console.log(parent.firstElementChild);   //shows the first child of parent
+    // console.log(parent.lastElementChild);    //shows the last child of parent
+
+    const dayOne = document.querySelector('.day')   //shows the first one, (here it shows the first child)
+    // console.log(dayOne);
+    // console.log(dayOne.parentElement);       //shows his parent element
+    // console.log(dayOne.nextElementSibling);  //shows his next sibling
+
+    console.log("NODES: ", parent.childNodes);  //shows "NodeList" (it counts spaces and text as well), which is different from "(parent.children)"
+</script>
+</html>
