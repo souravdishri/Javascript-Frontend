@@ -78,7 +78,7 @@
 
 `document.querySelector('input[type = 'password']');`
 
-`document.querySelector('p;first-child');`  
+`document.querySelector('p:first-child');`  
 #
 
     const myul = document.querySelector('ul');
