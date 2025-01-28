@@ -70,6 +70,8 @@
 
 ## querySelector()
 
+`querySelector: This method returns the first element within the document that matches the specified CSS selector(s). The datatype it returns is Element.`
+
 `document.querySelector('h1');` //show first h1
 
 `document.querySelector('#title');` //show the element which has (id = 'title')
@@ -90,6 +92,8 @@
     turnGreen.innerText = 'five';
 
 ## querySelectorAll()
+
+`querySelectorAll: This method returns a static (not live) NodeList representing a list of the document's elements that match the specified group of CSS selector(s). The datatype it returns is NodeList.`
 
         `const tempLiList = document.querySelectorAll('li');`  //output: NodeList, which is not pure 'array'
 
