@@ -68,9 +68,9 @@ function displayMessage(message) {
 
 function endGame() {
   userInput.value = '';
-  userInput.setAttribute('disabled', '');
-  p.classList.add('button');
-  p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+  userInput.setAttribute('disabled', '');   //it takes (key: value)
+  p.classList.add('button');    //Adds the 'button' class to the paragraph element, which will likely style it as a button
+  p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;   //Sets the inner HTML of p to display the "Start new Game" button
   startOver.appendChild(p);
   playGame = false;
   newGame();
@@ -84,8 +84,8 @@ function newGame() {
     numGuess = 1;
     guessSlot.innerHTML = '';
     remaining.innerHTML = `${11 - numGuess} `;
-    userInput.removeAttribute('disabled');
-    startOver.removeChild(p);
+    userInput.removeAttribute('disabled');    //Re-enables the input field
+    startOver.removeChild(p);   //Removes the new game button from the display
 
     playGame = true;
   });
