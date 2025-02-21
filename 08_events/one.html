@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events </title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){     //less features on this (.onclick())
+    //     alert("owl clicked")
+    // }
+
+
+    // attachEvent()
+    // jQuery - on
+
+
+
+    //learn this
+    // type, timestamp, defaultPrevented
+
+    // target, (modern)
+    // toElement (Deprecated, use target instead), 
+    // srcElement (Same as target, but older version), 
+    // currentTarget,
+
+    // clientX, clientY, screenX, screenY
+
+    // altkey, ctrlkey, shiftkey, 
+    // keyCode (Deprecated, use event.key)
+
+
+
+    //Learn (how events travel through the DOM)
+    //Event Propagation = Event Bubbling & Event Capturing
+
+    // When we want to track both parent and child
+    // document.getElementById('images').addEventListener('click', function(e){     //it's the modern one (.addEventListener())
+    //     console.log("clicked inside the ul");
+    // }, false)                                   //false means Event Bubbling
+    
+
+    // Note:
+    // false = Bubbling up (flow from inside to outside) 
+    // true = Capturing down (flow from outside to inside) 
+
+
+    // document.getElementById('owl').addEventListener('click', function(e){        //here (e) is the object
+    //     console.log("owl clicked");
+    //     e.stopPropagation()                     // Prevents event from bubbling up, (like e.preventDefault())
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // }, false)
+
+
+
+    document.querySelector('#images').addEventListener('click', function (e) {
+        // console.log(e.target.parentNode);
+        console.log(e.target.tagName);      //returns tagName like IMG,LI
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()       //new one
+        }
+
+
+    })
+
+    //removeIt.parentNode.removeChild(removeIt)     //it's flow like ( li > ul > method & (li) )
+</script>
+
+</html>
+
+
+<!-- document.getElementById('images').addEventListener('click', function (e) {
+    console.log("Event Type:", e.type);
+    console.log("Timestamp:", e.timeStamp);
+    console.log("Default Prevented:", e.defaultPrevented);
+    console.log("Target:", e.target);
+    console.log("Current Target:", e.currentTarget);
+    console.log("Mouse Position (Viewport):", e.clientX, e.clientY);
+    console.log("Mouse Position (Screen):", e.screenX, e.screenY);
+    console.log("Modifier Keys: Alt:", e.altKey, "Ctrl:", e.ctrlKey, "Shift:", e.shiftKey);
+}); -->
