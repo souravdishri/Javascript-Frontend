@@ -1,3 +1,4 @@
+<!-- it's not a part core javascript, it's a part of browser (Web API)  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,17 +11,17 @@
     <button id="stop">Stop</button>
 </body>
 <script>
-    const sayHitesh = function(){
+    const saySourav = function(){
         console.log("Hitesh");
     }
     const changeText = function(){
         document.querySelector('h1').innerHTML = "best JS series"
     }
 
-    const changeMe = setTimeout(changeText, 2000)
+    const changeMe = setTimeout(changeText, 2000)       //setTimeout()
 
     document.querySelector('#stop').addEventListener('click', function(){
-        clearTimeout(changeMe)
+        clearTimeout(changeMe)                          //clearTimeout()
         console.log("STOPPED")
     })
 </script>
