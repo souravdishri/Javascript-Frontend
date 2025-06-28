@@ -53,7 +53,14 @@ example({ a: 'x' }, { b: 'y' }) // [{ a: 'x' }, { b: 'y' }]
 
 // If you want to convert an object's values to an array, use Object.values(obj) instead:
 console.log(Object.values({name: "sourav"})); // ['sourav']
+console.log(Object.values({name: "sourav", age: 18})); // ['sourav', 18]
 
+// To get the keys of an object, use Object.keys(obj):
+console.log(Object.keys({name: "sourav", age: 18})); // ['name', 'age']
+console.log(Object.keys({name: "sourav"})); // ['name']
+
+// To get both keys and values as an array of [key, value] pairs, use Object.entries(obj):
+console.log(Object.entries({name: "sourav", age: 18})); // [['name', 'sourav'], ['age', 18]]
 
 
 let score1 = 100
@@ -70,5 +77,10 @@ console.log(Array.of(score1, score2, score3));  //returns a new array from a set
 // - Plain objects (like {name: "sourav"}) are NOT iterable: returns [].
 // - Strings: each character becomes an array element.
 // - Sets/Maps: their elements/entries become array elements.
+
 // - Arguments object: can be converted to a real array.
-// - To get object values as array, use Object.values(obj).
+// - To get object values as array, use `Object.values(obj)`.
+// `Object.keys(obj)` returns an array of the object's own enumerable property names (keys).
+// This is useful when you need to iterate over property names or check for the existence of a key.
+// If the object has no properties, `Object.keys({})` returns an empty array `[]`.  
+// If you want both keys and values, use `Object.entries(obj)`.
