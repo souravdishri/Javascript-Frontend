@@ -40,6 +40,17 @@ const myn2 = myArr.splice(1, 3) //To add, remove, or replace elements in an arra
 console.log("C ", myArr);
 console.log(myn2);                  //returns new array with removed elements
 
+console.log("D ", myn2);
+// Adding elements to myn2 using splice (at index 1, remove 0 elements, add "hero1", "hero2")
+myn2.splice(1, 0, "hero1", "hero2");
+console.log("After adding elements to myn2:", myn2);
+
+console.log("D ", myn2);
+
+// Replacing elements in myn2 using splice (at index 2, remove 1 element, add "replacedHero")
+myn2.splice(2, 1, "replacedHero");
+console.log("After replacing an element in myn2:", myn2);
+
 
 //Difference between slice & splice
 
