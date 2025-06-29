@@ -3,7 +3,7 @@
 
 // object literals
 
-//this is how we declare 'Symbol' ans used as key in object
+//this is how we declare 'Symbol' and used as key in object
 const mySym = Symbol("key1")
 
 
@@ -27,7 +27,7 @@ const JsUser = {
 
 
 JsUser.email = "sourav@chatgpt.com"
-// Object.freeze(JsUser)        //by the use of this values will not change/propagate
+// Object.freeze(JsUser)        //by the use of this, values will not change/propagate
 JsUser.email = "sourav@microsoft.com"
 // console.log(JsUser);
 
