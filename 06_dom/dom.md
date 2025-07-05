@@ -40,7 +40,7 @@
 
 - `document.getElementsById('title').setAttribute('class', 'test');`    //override
 
-- `document.getElementsById('title').getAttribute('class', 'test heading');`    //present both 
+- `document.getElementsById('title').setAttribute('class', 'test heading');`    //present both 
 
 - `document.getElementsByClass('heading');` //output will be HTMLCollection
 
